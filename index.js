@@ -152,11 +152,11 @@ class S3Deploy {
            * Remove any events that were previously created. No sense in sending them
            *  across again.
            */
-          /*if(s3Notifications && s3Notifications.results.length !== 0) {
+          if(s3Notifications && s3Notifications.results.length !== 0) {
             bucketConfiguration.events = bucketConfiguration.events.filter( event => {
               return !s3Notifications.results.find( s3Event => s3Event.Id === this.s3Facade.getId(event) );
             })
-          }*/
+          }
           
           this.serverless.cli.log("---------");
           this.serverless.cli.log(JSON.stringify(this.bucketNotifications));
